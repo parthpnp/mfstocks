@@ -1,0 +1,15 @@
+{
+  "name": "mfstocks",
+  "version": "1.0.0",
+  "description": "Application for getting stocks from AMF India and store it into Firestore.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node route/index.js"
+  },
+  "author": "PNP",
+  "license": "ISC",
+  "dependencies": {
+    "amfinav": "0.0.6"
+  }
+}
