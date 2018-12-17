@@ -10,7 +10,7 @@ admin.initializeApp({
 
 var db = admin.database();
 var ref = db.ref("chats/document1");
-ref.once("name", function(snapshot) {
+ref.once("value", function(snapshot) {
   console.log(snapshot.val());
 });
 
