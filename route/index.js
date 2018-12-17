@@ -1,6 +1,6 @@
 var amfi = require('amfinav');
 var admin = require("firebase-admin");
-var serviceAccount = require("auth/serviceAccountKey.json");
+var serviceAccount = require("../auth/serviceAccountKey.json");
 
 
 admin.initializeApp({
@@ -8,8 +8,13 @@ admin.initializeApp({
   databaseURL: "https://flutterdemo1-2480a.firebaseio.com"
 });
 
-
-var amfiNavs = new amfi();
-amfiNavs.on('dataready', function (res) {
-    console.log(res);
+var db = admin.database();
+var ref = db.ref("chats/document1");
+ref.once("name", function(snapshot) {
+  console.log(snapshot.val());
 });
+
+// var amfiNavs = new amfi();
+// amfiNavs.on('dataready', function (res) {
+//     console.log(res);
+// });
